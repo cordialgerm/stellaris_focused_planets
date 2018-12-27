@@ -1,4 +1,4 @@
-# Focus Planets Mod for Stellaris
+# Focused Planets Mod for Stellaris
 
 The goal of this mod is to allow for more focused and specialized planets. Each ethic gets access to a unique decision to specialize one of their planets:
 
