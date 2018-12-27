@@ -1,0 +1,12 @@
+﻿l_english:
+ col_fp_palace_world:0 "Palace World"
+ col_fp_palace_world_desc:0 "Countless workers and slaves toil unceasingly to make this planet into a paradise for the powerful ruling elite."
+
+ decision_fp_palace_world:0 "Establish Palace World"
+ decision_fp_palace_world_desc:0 "$col_fp_palace_world_desc$"
+
+ decision_fp_abolish_palace_world:0 "Remove Palace World"
+ decision_fp_abolish_palace_world_desc:0 "Vive La Revolucion!"
+
+ modifier_fp_palace_world:0 "Palace World"
+ modifier_fp_palace_world_desc:0 "$col_fp_palace_world_desc$"

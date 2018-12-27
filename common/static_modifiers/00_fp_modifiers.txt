@@ -1,0 +1,140 @@
+@worker_job_per_pop = 0.125
+@specialist_job_per_pop = 0.1
+@ruler_job_per_pop = 0.0833333333333
+
+@ethics_attraction = 0.25
+
+@research_penalty = -0.5
+
+
+modifier_fp_focused_planet = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_fp_focused_planet.dds"
+    icon_frame = 3
+    
+    planet_pops_consumer_goods_upkeep_mult = 0.10
+}
+
+modifier_fp_focused_planet_not_fanatic = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_fp_focused_planet.dds"
+    icon_frame = 3
+    
+    planet_pops_consumer_goods_upkeep_mult = 0.15
+}
+
+
+modifier_fp_indoctrination_world = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_fp_indoctrination_world.dds"
+	icon_frame = 1
+    
+    job_culture_worker_per_pop = @specialist_job_per_pop
+    pop_government_ethic_attraction = @ethics_attraction
+    planet_jobs_unity_produces_mult = 0.25
+
+    planet_jobs_physics_research_produces_mult = @research_penalty
+    planet_jobs_society_research_produces_mult = @research_penalty
+    planet_jobs_engineering_research_produces_mult = @research_penalty
+}
+
+
+modifier_fp_embassy_world = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_fp_embassy_world.dds"
+	icon_frame = 1
+    
+    job_clerk_per_pop = @worker_job_per_pop
+    pop_ethic_xenophile_attraction_mult = @ethics_attraction
+    pop_environment_tolerance = 0.25
+    planet_immigration_pull_mult = 0.25
+
+    pop_housing_usage_mult = 0.25
+}
+
+
+modifier_fp_market_world = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_fp_market_world.dds"
+    icon_frame = 1
+    
+    job_merchant_per_pop = @ruler_job_per_pop
+    pop_ethic_egalitarian_attraction_mult = @ethics_attraction
+    trade_value_mult = 0.25
+
+    pop_amenities_usage_mult = 0.25
+}
+
+
+modifier_fp_palace_world = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_fp_palace_world.dds"
+    icon_frame = 1
+    
+    job_noble_per_pop = @ruler_job_per_pop
+    pop_cat_ruler_political_power = 6.0
+    pop_cat_ruler_happiness = 0.2
+
+    pop_cat_worker_happiness = -0.1
+    pop_cat_slave_happiness = -0.2
+}
+
+
+modifier_fp_pilgrimage_world = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_fp_pilgrimage_world.dds"
+    icon_frame = 1
+    
+    job_high_priest_per_pop = @ruler_job_per_pop
+    pop_ethic_spiritualist_attraction_mult = @ethics_attraction
+    pop_cat_worker_happiness = 0.2
+    pop_cat_slave_happiness = 0.2
+
+    planet_jobs_physics_research_produces_mult = @research_penalty
+    planet_jobs_society_research_produces_mult = @research_penalty
+    planet_jobs_engineering_research_produces_mult = @research_penalty
+}
+
+
+modifier_fp_university_world = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_fp_university_world.dds"
+    icon_frame = 1
+    
+    job_researcher_per_pop = @specialist_job_per_pop
+    pop_cat_specialist_happiness = 0.1
+    planet_jobs_physics_research_produces_mult = 0.1
+    planet_jobs_society_research_produces_mult = 0.1
+    planet_jobs_engineering_research_produces_mult = 0.1
+
+    pop_government_ethic_attraction = -0.25
+}
+
+
+modifier_fp_military_industrial_world = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_fp_military_industrial_world.dds"
+    icon_frame = 1
+    
+    job_soldier_per_pop = @worker_job_per_pop
+    pop_ethic_militarist_attraction_mult = @ethics_attraction
+    planet_jobs_alloys_produces_mult = 0.1
+
+    planet_crime_add = 50   
+}
+
+
+modifier_fp_fertility_world = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_fp_fertility_world.dds"
+    icon_frame = 1
+    
+    job_healthcare_per_pop = @specialist_job_per_pop
+    pop_ethic_pacifist_attraction_mult = @ethics_attraction
+    pop_growth_speed = 0.10
+    pop_happiness = 0.1
+
+    pop_amenities_usage_mult = 0.25
+}
+
+
+modifier_fp_beaurocratic_world = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_fp_beaurocratic_world.dds"
+	icon_frame = 1
+    job_administrator_per_pop = @ruler_job_per_pop
+    pop_cat_ruler_political_power = 3
+    pop_cat_ruler_happiness = 0.1
+
+    pop_housing_usage_mult = 0.1
+    pop_amenities_usage_mult = 0.1
+}

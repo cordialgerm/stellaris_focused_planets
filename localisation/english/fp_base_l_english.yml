@@ -1,0 +1,6 @@
+﻿l_english:
+ modifier_fp_focused_planet:0 "Focused Planet"
+ modifier_fp_focused_planet_desc:0 "Specialized planets require additional consumer goods"
+
+ modifier_fp_focused_planet_not_fanatic:0 "Focused Planet (Not Fanatic)"
+ modifier_fp_focused_planet_not_fanatic_desc:0 "$modifier_fp_focused_planet_desc$. Non-fanatic ethics require additionaln consumer goods."

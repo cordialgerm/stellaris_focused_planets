@@ -1,0 +1,119 @@
+#root = planet
+
+# Indoctrination World
+col_fp_indoctrination_world = {
+
+	icon = 15
+
+	potential = {
+		has_modifier = modifier_fp_indoctrination_world
+	}
+
+	weight_modifier = {
+		base = 999
+	}
+}
+
+# Embassy World
+col_fp_embassy_world = {
+
+	icon = 10
+
+	potential = {
+		has_modifier = modifier_fp_embassy_world
+	}
+
+	weight_modifier = {
+		base = 999
+	}
+
+}
+
+# Market World
+col_fp_market_world = {
+
+	icon = 6
+
+	potential = {
+		has_modifier = modifier_fp_market_world
+	}
+
+	weight_modifier = {
+		base = 999
+	}
+
+}
+
+# Palace World
+col_fp_palace_world = {
+
+	icon = 14
+
+	potential = {
+		has_modifier = modifier_fp_palace_world
+	}
+
+	weight_modifier = {
+		base = 999
+	}
+}
+
+# Pilgrimage World
+col_fp_pilgrimage_world = {
+
+	icon = 14
+
+	potential = {
+		has_modifier = modifier_fp_pilgrimage_world
+	}
+
+	weight_modifier = {
+		base = 999
+	}
+
+}
+
+# University World
+col_fp_university_world = {
+
+	icon = 8
+
+	potential = {
+		has_modifier = modifier_fp_university_world
+	}
+
+	weight_modifier = {
+		base = 999
+	}
+
+}
+
+# Military-Industrial World
+col_fp_military_industrial_world = {
+
+	icon = 5
+
+	potential = {
+		has_modifier = modifier_fp_military_industrial_world
+	}
+
+	weight_modifier = {
+		base = 999
+	}
+
+}
+
+# Fertility World
+col_fp_fertility_world = {
+
+	icon = 3
+
+	potential = {
+		has_modifier = modifier_fp_fertility_world
+	}
+
+	weight_modifier = {
+		base = 999
+	}
+
+}

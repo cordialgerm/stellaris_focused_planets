@@ -1,0 +1,12 @@
+﻿l_english:
+ col_fp_pilgrimage_world:0 "Pilgrimage World"
+ col_fp_pilgrimage_world_desc:0 "Billions of faithful pilgrims flock to this holy site every year."
+
+ decision_fp_pilgrimage_world:0 "Establish Pilgrimage World"
+ decision_fp_pilgrimage_world_desc:0 "$col_fp_pilgrimage_world_desc$"
+
+ decision_fp_abolish_pilgrimage_world:0 "Remove Pilgrimage World"
+ decision_fp_abolish_pilgrimage_world_desc:0 "God is Dead"
+
+ modifier_fp_pilgrimage_world:0 "Pilgrimage World"
+ modifier_fp_pilgrimage_world_desc:0 "$col_fp_pilgrimage_world_desc$"

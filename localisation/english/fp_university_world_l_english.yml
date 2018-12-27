@@ -1,0 +1,12 @@
+﻿l_english:
+ col_fp_university_world:0 "University World"
+ col_fp_university_world_desc:0 "The best and the brightest aspire to enroll in the countless Universities founded here."
+
+ decision_fp_university_world:0 "Establish University World"
+ decision_fp_university_world_desc:0 "$col_fp_university_world_desc$"
+
+ decision_fp_abolish_university_world:0 "Remove University World"
+ decision_fp_abolish_university_world_desc:0 "Burn the books!"
+
+ modifier_fp_university_world:0 "University World"
+ modifier_fp_university_world_desc:0 "$col_fp_university_world_desc$"

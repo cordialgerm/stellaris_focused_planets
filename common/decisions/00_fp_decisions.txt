@@ -1,0 +1,1123 @@
+##########################################################################
+# Decisions
+##########################################################################
+
+@influence_cost = 125
+@influence_abolish_cost = 250
+@minerals_cost = 2500
+@energy_cost = 0
+@consumer_goods_cost = 500
+@min_pops = 14
+
+
+
+# Indoctrination World
+decision_fp_indoctrination_world = {
+	
+	owned_planets_only = yes
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+		cost = {
+			trigger = {
+				NOT = {
+					owner = {
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+			}
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+	}
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { has_modifier = modifier_fp_focused_planet }
+		habitable_structure = no
+		
+		NOT = { 
+			owner = { 
+				any_owned_planet = { has_modifier = modifier_fp_indoctrination_world }
+			} 
+		}
+
+		owner = { 
+			is_regular_empire = yes
+			OR = {
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_xenophobe		
+			}
+		}	
+	}
+
+	allow = {	
+
+		num_pops > @min_pops
+
+		custom_tooltip = {
+			fail_text = "fp_indoctrination_world_no_xenos"
+			
+			# no pop on the planet is not the owner species or a robot
+			NOT = {
+				any_owned_pop = {
+					NOT = {
+						OR = {
+							is_same_species = root.owner
+							has_trait = trait_mechanical
+						}
+					}
+				}
+			}	
+		}
+
+		custom_tooltip = {
+			fail_text = "fp_indoctrination_world_unity_building"
+			OR = {
+				has_building = building_autochthon_monument
+				has_building = building_heritage_site
+				has_building = building_hypercomms_forum
+				has_building = building_autocurating_vault
+				has_building = building_temple
+				has_building = building_holotemple
+				has_building = building_sacred_nexus
+				has_building = building_citadel_of_faith
+				has_building = building_corporate_monument
+				has_building = building_corporate_site
+				has_building = building_corporate_forum
+				has_building = building_corporate_vault
+			}
+		}
+	}
+	
+	effect = {
+
+		add_modifier = {
+			modifier = modifier_fp_indoctrination_world
+			days = -1
+		}
+
+		IF = {
+			limit = {
+				owner = {
+					has_ethic = ethic_xenophobe
+				}
+			}
+			add_modifier = {
+				modifier = modifier_fp_focused_planet_not_fanatic
+				days = -1
+			}
+		}
+		ELSE = {
+			add_modifier = {
+				modifier = modifier_fp_focused_planet
+				days = -1
+			}
+		}
+
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_fp_abolish_indoctrination_world = {
+	
+	owned_planets_only = yes
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_abolish_cost
+		}
+	}
+	
+	potential = {
+		has_modifier = modifier_fp_indoctrination_world
+	}
+	
+	effect = {
+		remove_modifier = modifier_fp_indoctrination_world
+		remove_modifier = modifier_fp_focused_planet
+		remove_modifier = modifier_fp_focused_planet_not_fanatic
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Embassy World
+decision_fp_embassy_world = {
+	
+	owned_planets_only = yes
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+		cost = {
+			trigger = {
+				NOT = {
+					owner = {
+						has_ethic = ethic_fanatic_xenophile
+					}
+				}
+			}
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+	}
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { has_modifier = modifier_fp_focused_planet }
+		habitable_structure = no
+		
+		NOT = { 
+			owner = { 
+				any_owned_planet = { has_modifier = modifier_fp_embassy_world }
+			} 
+		}
+
+		owner = { 
+			is_regular_empire = yes
+			OR = {
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_xenophile		
+			}
+		}	
+	}
+
+	allow = {	
+
+		num_pops > @min_pops
+
+		custom_tooltip = {
+			fail_text = "fp_embassy_world_needs_xenos"
+			# at least one other pop on the planet
+			any_owned_pop = {
+				NOR = {
+					is_same_species = root.owner
+					has_trait = trait_mechanical
+				}
+			}
+		}
+
+		custom_tooltip = {
+			fail_text = "fp_embassy_world_unity_building"
+			OR = {
+				has_building = building_autochthon_monument
+				has_building = building_heritage_site
+				has_building = building_hypercomms_forum
+				has_building = building_autocurating_vault
+				has_building = building_temple
+				has_building = building_holotemple
+				has_building = building_sacred_nexus
+				has_building = building_citadel_of_faith
+				has_building = building_corporate_monument
+				has_building = building_corporate_site
+				has_building = building_corporate_forum
+				has_building = building_corporate_vault
+			}
+		}
+	}
+	
+	effect = {
+		add_modifier = {
+			modifier = modifier_fp_embassy_world
+			days = -1
+		}
+
+		IF = {
+			limit = {
+				owner = {
+					has_ethic = ethic_xenophile
+				}
+			}
+			add_modifier = {
+				modifier = modifier_fp_focused_planet_not_fanatic
+				days = -1
+			}
+		}
+		ELSE = {
+			add_modifier = {
+				modifier = modifier_fp_focused_planet
+				days = -1
+			}
+		}
+
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_fp_abolish_embassy_world = {
+	
+	owned_planets_only = yes
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_abolish_cost
+		}
+	}
+	
+	potential = {
+		has_modifier = modifier_fp_embassy_world
+	}
+	
+	effect = {
+		remove_modifier = modifier_fp_embassy_world
+		remove_modifier = modifier_fp_focused_planet
+		remove_modifier = modifier_fp_focused_planet_not_fanatic
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Market World
+decision_fp_market_world = {
+	
+	owned_planets_only = yes
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+		cost = {
+			trigger = {
+				NOT = {
+					owner = {
+						has_ethic = ethic_fanatic_egalitarian
+					}
+				}
+			}
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+	}
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { has_modifier = modifier_fp_focused_planet }
+		habitable_structure = no
+		
+		NOT = { 
+			owner = { 
+				any_owned_planet = { has_modifier = modifier_fp_market_world }
+			} 
+		}
+
+		owner = { 
+			is_regular_empire = yes
+			OR = {
+				has_ethic = ethic_fanatic_egalitarian
+				has_ethic = ethic_egalitarian
+			}
+		}	
+	}
+
+	allow = {	
+
+		num_pops > @min_pops
+
+		custom_tooltip = {
+			fail_text = "fp_market_world_trade_building"
+			OR = {
+				num_buildings = { type = building_commercial_zone value > 1 }
+				has_building = building_commercial_megaplex
+				has_building = building_galactic_stock_exchange
+			}
+		}
+	}
+	
+	effect = {
+		add_modifier = {
+			modifier = modifier_fp_market_world
+			days = -1
+		}
+		IF = {
+			limit = {
+				owner = {
+					has_ethic = ethic_egalitarian
+				}
+			}
+			add_modifier = {
+				modifier = modifier_fp_focused_planet_not_fanatic
+				days = -1
+			}
+		}
+		ELSE = {
+			add_modifier = {
+				modifier = modifier_fp_focused_planet
+				days = -1
+			}
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_fp_abolish_market_world = {
+	
+	owned_planets_only = yes
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_abolish_cost
+		}
+	}
+	
+	potential = {
+		has_modifier = modifier_fp_market_world
+	}
+	
+	effect = {
+		remove_modifier = modifier_fp_market_world
+		remove_modifier = modifier_fp_focused_planet
+		remove_modifier = modifier_fp_focused_planet_not_fanatic
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Palace World
+decision_fp_palace_world = {
+	
+	owned_planets_only = yes
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+		cost = {
+			trigger = {
+				NOT = {
+					owner = {
+						has_ethic = ethic_fanatic_authoritarian
+					}
+				}
+			}
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+	}
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { has_modifier = modifier_fp_focused_planet }
+		habitable_structure = no
+		
+		NOT = { 
+			owner = { 
+				any_owned_planet = { has_modifier = modifier_fp_palace_world }
+			} 
+		}
+
+		owner = { 
+			is_regular_empire = yes
+			OR = {
+				has_ethic = ethic_fanatic_authoritarian
+				has_ethic = ethic_authoritarian
+			}
+		}	
+	}
+
+	allow = {	
+
+		num_pops > @min_pops
+
+		OR = {
+			num_buildings = { type = building_luxury_residence value > 1 }
+			has_building = building_paradise_dome
+			has_building = building_noble_estates
+		}
+	}
+	
+	effect = {
+		add_modifier = {
+			modifier = modifier_fp_palace_world
+			days = -1
+		}
+		IF = {
+			limit = {
+				owner = {
+					has_ethic = ethic_authoritarian
+				}
+			}
+			add_modifier = {
+				modifier = modifier_fp_focused_planet_not_fanatic
+				days = -1
+			}
+		}
+		ELSE = {
+			add_modifier = {
+				modifier = modifier_fp_focused_planet
+				days = -1
+			}
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_fp_abolish_palace_world = {
+	
+	owned_planets_only = yes
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_abolish_cost
+		}
+	}
+	
+	potential = {
+		has_modifier = modifier_fp_palace_world
+	}
+	
+	effect = {
+		remove_modifier = modifier_fp_palace_world
+		remove_modifier = modifier_fp_focused_planet
+		remove_modifier = modifier_fp_focused_planet_not_fanatic
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Pilgrimage World
+decision_fp_pilgrimage_world = {
+	
+	owned_planets_only = yes
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+		cost = {
+			trigger = {
+				NOT = {
+					owner = {
+						has_ethic = ethic_fanatic_spiritualist
+					}
+				}
+			}
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+	}
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { has_modifier = modifier_fp_focused_planet }
+		habitable_structure = no
+		
+		NOT = { 
+			owner = { 
+				any_owned_planet = { has_modifier = modifier_fp_pilgrimage_world }
+			} 
+		}
+
+		owner = { 
+			is_regular_empire = yes
+			OR = {
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_spiritualist
+			}
+		}	
+	}
+
+	allow = {	
+		OR = {
+
+			is_planet_class = pc_gaia
+
+			AND = {
+				has_building = building_temple
+				OR = {
+					has_modifier = natural_beauty
+					has_modifier = atmospheric_aphrodisiac
+					has_modifier = atmospheric_hallucinogen
+					has_modifier = lush_planet
+					has_modifier = atmospheric_hallucinogen_good
+					has_modifier = soothing_crystals
+					has_modifier = good_vibrations
+					has_modifier = paradise_planet
+					num_pops > @min_pops
+				}
+			}
+			
+			has_building = building_holotemple
+			has_building = building_sacred_nexus
+			has_building = building_citadel_of_faith
+			has_building = building_artist_patron
+			has_building = building_nuumismatic_shrine
+
+		}
+	}
+	
+	effect = {
+		add_modifier = {
+			modifier = modifier_fp_pilgrimage_world
+			days = -1
+		}
+		IF = {
+			limit = {
+				owner = {
+					has_ethic = ethic_spiritualist
+				}
+			}
+			add_modifier = {
+				modifier = modifier_fp_focused_planet_not_fanatic
+				days = -1
+			}
+		}
+		ELSE = {
+			add_modifier = {
+				modifier = modifier_fp_focused_planet
+				days = -1
+			}
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_fp_abolish_pilgrimage_world = {
+	
+	owned_planets_only = yes
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_abolish_cost
+		}
+	}
+	
+	potential = {
+		has_modifier = modifier_fp_pilgrimage_world
+	}
+	
+	effect = {
+		remove_modifier = modifier_fp_pilgrimage_world
+		remove_modifier = modifier_fp_focused_planet
+		remove_modifier = modifier_fp_focused_planet_not_fanatic
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# University World
+decision_fp_university_world = {
+	
+	owned_planets_only = yes
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+		cost = {
+			trigger = {
+				NOT = {
+					owner = {
+						has_ethic = ethic_fanatic_materialist
+					}
+				}
+			}
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+	}
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { has_modifier = modifier_fp_focused_planet }
+		habitable_structure = no
+		
+		NOT = { 
+			owner = { 
+				any_owned_planet = { has_modifier = modifier_fp_university_world }
+			} 
+		}
+
+		owner = { 
+			is_regular_empire = yes
+			OR = {
+				has_ethic = ethic_fanatic_materialist
+				has_ethic = ethic_materialist
+			}
+		}	
+	}
+
+	allow = {
+		
+		num_pops > @min_pops
+
+		OR = {
+			num_buildings = { type = building_research_lab_1 value > 1 }
+			has_building = building_research_lab_2
+			has_building = building_research_lab_3
+			has_building = building_institute
+			has_building = building_supercomputer
+		}
+	}
+	
+	effect = {
+		add_modifier = {
+			modifier = modifier_fp_university_world
+			days = -1
+		}
+		IF = {
+			limit = {
+				owner = {
+					has_ethic = ethic_materialist
+				}
+			}
+			add_modifier = {
+				modifier = modifier_fp_focused_planet_not_fanatic
+				days = -1
+			}
+		}
+		ELSE = {
+			add_modifier = {
+				modifier = modifier_fp_focused_planet
+				days = -1
+			}
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_fp_abolish_university_world = {
+	
+	owned_planets_only = yes
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_abolish_cost
+		}
+	}
+	
+	potential = {
+		has_modifier = modifier_fp_university_world
+	}
+	
+	effect = {
+		remove_modifier = modifier_fp_university_world
+		remove_modifier = modifier_fp_focused_planet
+		remove_modifier = modifier_fp_focused_planet_not_fanatic
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Military-Industrial World
+decision_fp_military_industrial_world = {
+	
+	owned_planets_only = yes
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+		cost = {
+			trigger = {
+				NOT = {
+					owner = {
+						has_ethic = ethic_fanatic_materialist
+					}
+				}
+			}
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+	}
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { has_modifier = modifier_fp_focused_planet }
+		habitable_structure = no
+		
+		NOT = { 
+			owner = { 
+				any_owned_planet = { has_modifier = modifier_fp_military_industrial_world }
+			} 
+		}
+
+		owner = { 
+			is_regular_empire = yes
+			OR = {
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_militarist
+			}
+		}	
+	}
+
+	allow = {
+		
+		num_pops > @min_pops
+
+		AND = {
+
+			OR = {
+				has_building = building_military_academy
+				has_building = building_stronghold
+				has_building = building_fortress
+				has_building = building_planetary_shield_generator
+			}
+
+			OR = {
+				has_building = building_foundry_1
+				has_building = building_foundry_2
+				has_building = building_foundry_3
+			}
+		}
+	}
+	
+	effect = {
+		add_modifier = {
+			modifier = modifier_fp_military_industrial_world
+			days = -1
+		}
+		IF = {
+			limit = {
+				owner = {
+					has_ethic = ethic_militarist
+				}
+			}
+			add_modifier = {
+				modifier = modifier_fp_focused_planet_not_fanatic
+				days = -1
+			}
+		}
+		ELSE = {
+			add_modifier = {
+				modifier = modifier_fp_focused_planet
+				days = -1
+			}
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_fp_abolish_military_industrial_world = {
+	
+	owned_planets_only = yes
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_abolish_cost
+		}
+	}
+	
+	potential = {
+		has_modifier = modifier_fp_military_industrial_world
+	}
+	
+	effect = {
+		remove_modifier = modifier_fp_military_industrial_world
+		remove_modifier = modifier_fp_focused_planet
+		remove_modifier = modifier_fp_focused_planet_not_fanatic
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Fertility World
+decision_fp_fertility_world = {
+	
+	owned_planets_only = yes
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+		cost = {
+			trigger = {
+				NOT = {
+					owner = {
+						has_ethic = ethic_fanatic_materialist
+					}
+				}
+			}
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+	}
+	
+	potential = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+		NOT = { has_modifier = modifier_fp_focused_planet }
+		habitable_structure = no
+		
+		NOT = { 
+			owner = { 
+				any_owned_planet = { has_modifier = modifier_fp_fertility_world }
+			} 
+		}
+
+		owner = { 
+			is_regular_empire = yes
+			OR = {
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_pacifist
+			}
+		}	
+	}
+
+	allow = {
+		
+		num_pops > @min_pops
+
+		AND = {
+
+			OR = {
+				has_building = building_clinic
+				has_building = building_hospital
+			}
+
+			OR = {
+				has_building = building_holo_theatres
+				has_building = building_hyper_entertainment_forum
+			}
+		}
+	}
+	
+	effect = {
+		add_modifier = {
+			modifier = modifier_fp_fertility_world
+			days = -1
+		}
+		IF = {
+			limit = {
+				owner = {
+					has_ethic = ethic_pacifist
+				}
+			}
+			add_modifier = {
+				modifier = modifier_fp_focused_planet_not_fanatic
+				days = -1
+			}
+		}
+		ELSE = {
+			add_modifier = {
+				modifier = modifier_fp_focused_planet
+				days = -1
+			}
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_fp_abolish_fertility_world = {
+	
+	owned_planets_only = yes
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_abolish_cost
+		}
+	}
+	
+	potential = {
+		has_modifier = modifier_fp_fertility_world
+	}
+	
+	effect = {
+		remove_modifier = modifier_fp_fertility_world
+		remove_modifier = modifier_fp_focused_planet
+		remove_modifier = modifier_fp_focused_planet_not_fanatic
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Beaurocratic World
+decision_fp_beaurocratic_world = {
+	
+	owned_planets_only = yes
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost
+			consumer_goods = @consumer_goods_cost
+		}
+	}
+	
+	potential = {
+		is_capital = yes
+		
+		NOT = { has_modifier = modifier_fp_focused_planet }
+		
+		NOT = { 
+			owner = { 
+				any_owned_planet = { has_modifier = modifier_fp_beaurocratic_world }
+			} 
+		}
+
+		owner = { 
+			is_regular_empire = yes
+		}	
+	}
+
+	allow = {
+		
+		num_pops > 29
+	}
+	
+	effect = {
+		add_modifier = {
+			modifier = modifier_fp_beaurocratic_world
+			days = -1
+		}
+		add_modifier = {
+			modifier = modifier_fp_focused_planet
+			days = -1
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_fp_abolish_beaurocratic_world = {
+	
+	owned_planets_only = yes
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_abolish_cost
+		}
+	}
+	
+	potential = {
+		has_modifier = modifier_fp_beaurocratic_world
+	}
+	
+	effect = {
+		remove_modifier = modifier_fp_beaurocratic_world
+		remove_modifier = modifier_fp_focused_planet
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

@@ -1,0 +1,14 @@
+﻿l_english:
+ col_fp_market_world:0 "Market World"
+ col_fp_market_world_desc:0 "Billions of credits change hands daily in the countless markets covering this planet."
+
+ decision_fp_market_world:0 "Establish Market World"
+ decision_fp_market_world_desc:0 "$col_fp_market_world_desc$"
+
+ decision_fp_abolish_market_world:0 "Remove Market World"
+ decision_fp_abolish_market_world_desc:0 "The once-bustling marketplaces are now deathly silent."
+
+ modifier_fp_market_world:0 "Market World"
+ modifier_fp_market_world_desc:0 "$col_fp_market_world_desc$"
+
+ fp_market_world_trade_building:0 "Planet must have at least two trade buildings or one advanced trade building"

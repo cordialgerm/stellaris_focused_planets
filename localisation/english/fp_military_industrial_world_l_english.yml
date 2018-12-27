@@ -1,0 +1,12 @@
+﻿l_english:
+ col_fp_military_industrial_world:0 "Military-Industrial World"
+ col_fp_military_industrial_world_desc:0 "Sprawling military-industrial complexes dominate all economic, political, and ecological aspects of this planet."
+
+ decision_fp_military_industrial_world:0 "Establish Military-Industrial World"
+ decision_fp_military_industrial_world_desc:0 "$col_fp_military_industrial_world_desc$"
+
+ decision_fp_abolish_military_industrial_world:0 "Remove Military-Industrial World"
+ decision_fp_abolish_military_industrial_world_desc:0 "War.. what is it good for?"
+
+ modifier_fp_military_industrial_world:0 "Military-Industrial World"
+ modifier_fp_military_industrial_world_desc:0 "$col_fp_military_industrial_world_desc$"

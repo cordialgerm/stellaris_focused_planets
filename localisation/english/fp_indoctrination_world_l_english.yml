@@ -1,0 +1,15 @@
+﻿l_english:
+ col_fp_indoctrination_world:0 "Indoctrination World"
+ col_fp_indoctrination_world_desc:0 "Countless facilities dedicated to raising and indoctrinating the young according to ancient tradition."
+
+ decision_fp_indoctrination_world:0 "Establish Indoctrination World"
+ decision_fp_indoctrination_world_desc:0 "$col_fp_indoctrination_world_desc$"
+
+ decision_fp_abolish_indoctrination_world:0 "Remove Indoctrination World"
+ decision_fp_abolish_indoctrination_world_desc:0 "Is it wrong to brainwash the young?"
+
+ modifier_fp_indoctrination_world:0 "Indoctrination World"
+ modifier_fp_indoctrination_world_desc:0 "$col_fp_indoctrination_world_desc$"
+
+ fp_indoctrination_world_no_xenos:0 "Planet must be pure and have no xeno pops"
+ fp_indoctrination_world_unity_building:0 "Planet must be pure and have at least one unity building"
