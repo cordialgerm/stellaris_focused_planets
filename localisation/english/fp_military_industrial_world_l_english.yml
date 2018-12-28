@@ -1,12 +1,16 @@
 ﻿l_english:
  col_fp_military_industrial_world:0 "Military-Industrial World"
- col_fp_military_industrial_world_desc:0 "Sprawling military-industrial complexes dominate all economic, political, and ecological aspects of this planet."
+ col_fp_military_industrial_world_desc:0 "Sprawling military-industrial complexes dominate all economic, political, and ecological aspects of this planet. Unsurprisingly, the complex also has a stranglehold on the local politicians."
 
- decision_fp_military_industrial_world:0 "Establish Military-Industrial World"
+ decision_fp_military_industrial_world:0 "Establish $modifier_fp_military_industrial_world$"
  decision_fp_military_industrial_world_desc:0 "$col_fp_military_industrial_world_desc$"
 
- decision_fp_abolish_military_industrial_world:0 "Remove Military-Industrial World"
+ decision_fp_abolish_military_industrial_world:0 "Remove $modifier_fp_military_industrial_world$"
  decision_fp_abolish_military_industrial_world_desc:0 "War.. what is it good for?"
 
- modifier_fp_military_industrial_world:0 "Military-Industrial World"
+ modifier_fp_military_industrial_world:0 "Military-Industrial Complex"
  modifier_fp_military_industrial_world_desc:0 "$col_fp_military_industrial_world_desc$"
+
+ focused_planets_militarist.1.name:0 "$modifier_fp_military_industrial_world$ Lost!"
+ focused_planets_militarist.1.desc:0 "Alas, our once grand $modifier_fp_military_industrial_world$ is now a shell of its former glory."
+ focused_planets_militarist.1.a:0 "All things come to an end"

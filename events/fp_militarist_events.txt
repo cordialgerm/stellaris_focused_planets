@@ -1,0 +1,35 @@
+namespace = focused_planets_militarist
+
+# Owns Militarist World but not Militarist
+country_event = {
+	id = focused_planets_militarist.1
+	title = "focused_planets_militarist.1.name"
+	desc = "focused_planets_militarist.1.desc"
+	picture = GFX_evt_burning_settlement
+	
+	is_triggered_only = yes
+
+	trigger = {
+
+		any_owned_planet = {
+			has_modifier = modifier_fp_military_industrial_world
+		}
+
+		NAND = {
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+
+	option = {
+		name = "focused_planets_militarist.1.a"
+		every_owned_planet = {
+			limit = {
+				has_modifier = modifier_fp_military_industrial_world
+			}
+			remove_modifier = modifier_fp_military_industrial_world
+			remove_modifier = modifier_fp_focused_planet
+			remove_modifier = modifier_fp_focused_planet_not_fanatic
+		}			
+	}
+}

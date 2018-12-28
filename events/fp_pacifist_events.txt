@@ -1,0 +1,35 @@
+namespace = focused_planets_pacifist
+
+# Owns Pacifist World but not Pacifist
+country_event = {
+	id = focused_planets_pacifist.1
+	title = "focused_planets_pacifist.1.name"
+	desc = "focused_planets_pacifist.1.desc"
+	picture = GFX_evt_burning_settlement
+	
+	is_triggered_only = yes
+
+	trigger = {
+
+		any_owned_planet = {
+			has_modifier = modifier_fp_fertility_world
+		}
+
+		NAND = {
+			has_ethic = ethic_pacifist
+			has_ethic = ethic_fanatic_pacifist
+		}
+	}
+
+	option = {
+		name = "focused_planets_pacifist.1.a"
+		every_owned_planet = {
+			limit = {
+				has_modifier = modifier_fp_fertility_world
+			}
+			remove_modifier = modifier_fp_fertility_world
+			remove_modifier = modifier_fp_focused_planet
+			remove_modifier = modifier_fp_focused_planet_not_fanatic
+		}			
+	}
+}

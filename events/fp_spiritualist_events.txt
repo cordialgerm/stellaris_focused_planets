@@ -1,0 +1,35 @@
+namespace = focused_planets_spiritualist
+
+# Owns Spiritualist World but not Spiritualist
+country_event = {
+	id = focused_planets_spiritualist.1
+	title = "focused_planets_spiritualist.1.name"
+	desc = "focused_planets_spiritualist.1.desc"
+	picture = GFX_evt_burning_settlement
+	
+	is_triggered_only = yes
+
+	trigger = {
+
+		any_owned_planet = {
+			has_modifier = modifier_fp_pilgrimage_world
+		}
+
+		NAND = {
+			has_ethic = ethic_spiritualist
+			has_ethic = ethic_fanatic_spiritualist
+		}
+	}
+
+	option = {
+		name = "focused_planets_spiritualist.1.a"
+		every_owned_planet = {
+			limit = {
+				has_modifier = modifier_fp_pilgrimage_world
+			}
+			remove_modifier = modifier_fp_pilgrimage_world
+			remove_modifier = modifier_fp_focused_planet
+			remove_modifier = modifier_fp_focused_planet_not_fanatic
+		}			
+	}
+}

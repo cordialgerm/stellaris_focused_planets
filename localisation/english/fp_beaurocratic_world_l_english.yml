@@ -2,11 +2,11 @@
  col_fp_beaurocratic_world:0 "Beaurocratic World"
  col_fp_beaurocratic_world_desc:0 "Sprawling beaurocratic complexes permeate all aspects of this planet."
 
- decision_fp_beaurocratic_world:0 "Establish Beaurocratic World"
+ decision_fp_beaurocratic_world:0 "Establish $modifier_fp_beaurocratic_world$"
  decision_fp_beaurocratic_world_desc:0 "$col_fp_beaurocratic_world_desc$"
 
- decision_fp_abolish_beaurocratic_world:0 "Remove Beaurocratic World"
+ decision_fp_abolish_beaurocratic_world:0 "Remove $modifier_fp_beaurocratic_world$"
  decision_fp_abolish_beaurocratic_world_desc:0 "-3 Stability?"
 
- modifier_fp_beaurocratic_world:0 "Beaurocratic World"
+ modifier_fp_beaurocratic_world:0 "Beaurocratic Mega-Plex"
  modifier_fp_beaurocratic_world_desc:0 "$col_fp_beaurocratic_world_desc$"

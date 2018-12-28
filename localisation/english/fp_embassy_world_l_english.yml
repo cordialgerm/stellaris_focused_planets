@@ -1,15 +1,19 @@
 ﻿l_english:
  col_fp_embassy_world:0 "Embassy World"
- col_fp_embassy_world_desc:0 "Countless embassies and facilities catering to all cultures and forms of life."
+ col_fp_embassy_world_desc:0 "Upscale embassies and facilities catering to all cultures and forms of life. Gentrification at a planetary scale."
 
- decision_fp_embassy_world:0 "Establish Embassy World"
+ decision_fp_embassy_world:0 "Establish $modifier_fp_embassy_world$"
  decision_fp_embassy_world_desc:0 "$col_fp_embassy_world_desc$"
 
- decision_fp_abolish_embassy_world:0 "Remove Embassy World"
+ decision_fp_abolish_embassy_world:0 "Remove $modifier_fp_embassy_world$"
  decision_fp_abolish_embassy_world_desc:0 "The time for diplomacy is long gone..."
 
- modifier_fp_embassy_world:0 "Embassy World"
+ modifier_fp_embassy_world:0 "Xeno-Embassies"
  modifier_fp_embassy_world_desc:0 "$col_fp_embassy_world_desc$"
 
- fp_embassy_world_needs_xenos:0 "Planet must be culturally diverse and have xeno pops"
- fp_embassy_world_unity_building:0 "Planet must be culturally diverse and have at least one unity building"
+ fp_embassy_world_needs_xenos:0 "$TRIGGER_FAIL$ Planet must be culturally diverse and have xeno pops"
+ fp_embassy_world_unity_building:0 "$TRIGGER_FAIL$ Planet must be culturally diverse and have at least one unity building"
+
+ focused_planets_xenophile.1.name:0 "$modifier_fp_embassy_world$ Lost!"
+ focused_planets_xenophile.1.desc:0 "Alas, our once grand $modifier_fp_embassy_world$ is now a shell of its former glory."
+ focused_planets_xenophile.1.a:0 "All things come to an end"

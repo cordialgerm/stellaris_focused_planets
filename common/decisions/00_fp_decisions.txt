@@ -2,12 +2,12 @@
 # Decisions
 ##########################################################################
 
-@influence_cost = 125
+@influence_cost = 150
 @influence_abolish_cost = 250
-@minerals_cost = 2500
+@minerals_cost = 5000
 @energy_cost = 0
-@consumer_goods_cost = 500
-@min_pops = 14
+@consumer_goods_cost = 1000
+@min_pops = 19
 
 
 
@@ -588,31 +588,16 @@ decision_fp_pilgrimage_world = {
 	}
 
 	allow = {	
+
+		num_pops > @min_pops
+		
 		OR = {
-
-			is_planet_class = pc_gaia
-
-			AND = {
-				has_building = building_temple
-				OR = {
-					has_modifier = natural_beauty
-					has_modifier = atmospheric_aphrodisiac
-					has_modifier = atmospheric_hallucinogen
-					has_modifier = lush_planet
-					has_modifier = atmospheric_hallucinogen_good
-					has_modifier = soothing_crystals
-					has_modifier = good_vibrations
-					has_modifier = paradise_planet
-					num_pops > @min_pops
-				}
-			}
-			
+			has_building = building_temple
 			has_building = building_holotemple
 			has_building = building_sacred_nexus
 			has_building = building_citadel_of_faith
 			has_building = building_artist_patron
 			has_building = building_nuumismatic_shrine
-
 		}
 	}
 	

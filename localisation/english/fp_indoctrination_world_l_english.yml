@@ -1,15 +1,19 @@
 ﻿l_english:
  col_fp_indoctrination_world:0 "Indoctrination World"
- col_fp_indoctrination_world_desc:0 "Countless facilities dedicated to raising and indoctrinating the young according to ancient tradition."
+ col_fp_indoctrination_world_desc:0 "Myriad facilities dedicated to raising and indoctrinating the young according to ancient tradition. Heretical thinking is severely discouraged."
 
- decision_fp_indoctrination_world:0 "Establish Indoctrination World"
+ decision_fp_indoctrination_world:0 "Establish $modifier_fp_indoctrination_world$"
  decision_fp_indoctrination_world_desc:0 "$col_fp_indoctrination_world_desc$"
 
- decision_fp_abolish_indoctrination_world:0 "Remove Indoctrination World"
+ decision_fp_abolish_indoctrination_world:0 "Remove $modifier_fp_indoctrination_world$"
  decision_fp_abolish_indoctrination_world_desc:0 "Is it wrong to brainwash the young?"
 
- modifier_fp_indoctrination_world:0 "Indoctrination World"
+ modifier_fp_indoctrination_world:0 "Indoctrination Camps"
  modifier_fp_indoctrination_world_desc:0 "$col_fp_indoctrination_world_desc$"
 
- fp_indoctrination_world_no_xenos:0 "Planet must be pure and have no xeno pops"
- fp_indoctrination_world_unity_building:0 "Planet must be pure and have at least one unity building"
+ fp_indoctrination_world_no_xenos:0 "$TRIGGER_FAIL$ Planet may not be despoiled by xeno pops"
+ fp_indoctrination_world_unity_building:0 ""$TRIGGER_FAIL$ Planet must have at least one unity building"
+
+ focused_planets_xenophobe.1.name:0 "$modifier_fp_indoctrination_world$ Lost!"
+ focused_planets_xenophobe.1.desc:0 "Alas, our once grand $modifier_fp_indoctrination_world$ are now a shell of their former glory."
+ focused_planets_xenophobe.1.a:0 "All things come to an end"

@@ -1,12 +1,16 @@
 ﻿l_english:
  col_fp_pilgrimage_world:0 "Pilgrimage World"
- col_fp_pilgrimage_world_desc:0 "Billions of faithful pilgrims flock to this holy site every year."
+ col_fp_pilgrimage_world_desc:0 "Billions of faithful pilgrims flock to this holy site every year. Many of the less fortunate are unable to afford the return trip."
 
- decision_fp_pilgrimage_world:0 "Establish Pilgrimage World"
+ decision_fp_pilgrimage_world:0 "Establish $modifier_fp_pilgrimage_world$"
  decision_fp_pilgrimage_world_desc:0 "$col_fp_pilgrimage_world_desc$"
 
- decision_fp_abolish_pilgrimage_world:0 "Remove Pilgrimage World"
+ decision_fp_abolish_pilgrimage_world:0 "Remove $modifier_fp_pilgrimage_world$"
  decision_fp_abolish_pilgrimage_world_desc:0 "God is Dead"
 
- modifier_fp_pilgrimage_world:0 "Pilgrimage World"
+ modifier_fp_pilgrimage_world:0 "Pilgrimage Nexus"
  modifier_fp_pilgrimage_world_desc:0 "$col_fp_pilgrimage_world_desc$"
+
+ focused_planets_spiritualist.1.name:0 "$modifier_fp_pilgrimage_world$ Lost!"
+ focused_planets_spiritualist.1.desc:0 "Alas, our once grand $modifier_fp_pilgrimage_world$ is now a shell of its former glory."
+ focused_planets_spiritualist.1.a:0 "All things come to an end"

@@ -1,12 +1,16 @@
 ﻿l_english:
- col_fp_university_world:0 "University World"
- col_fp_university_world_desc:0 "The best and the brightest aspire to enroll in the countless Universities founded here."
+ col_fp_university_world:0 "Academy World"
+ col_fp_university_world_desc:0 "The best and the brightest aspire to enroll in the $modifier_fp_university_world$. Graduates are free-thinking, innovative, and forge their own path in the galaxy."
 
- decision_fp_university_world:0 "Establish University World"
+ decision_fp_university_world:0 "Establish $modifier_fp_university_world$"
  decision_fp_university_world_desc:0 "$col_fp_university_world_desc$"
 
- decision_fp_abolish_university_world:0 "Remove University World"
+ decision_fp_abolish_university_world:0 "Remove $modifier_fp_university_world$"
  decision_fp_abolish_university_world_desc:0 "Burn the books!"
 
- modifier_fp_university_world:0 "University World"
+ modifier_fp_university_world:0 "Academy of Sciences"
  modifier_fp_university_world_desc:0 "$col_fp_university_world_desc$"
+
+ focused_planets_materialist.1.name:0 "$modifier_fp_university_world$ Lost!"
+ focused_planets_materialist.1.desc:0 "Alas, our once grand $modifier_fp_university_world$ is now a shell of its former glory."
+ focused_planets_materialist.1.a:0 "All things come to an end"

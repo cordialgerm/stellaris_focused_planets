@@ -1,0 +1,115 @@
+namespace = focused_planets
+
+# Crime Gatekeeper
+event = {
+	id = focused_planets.1
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		every_playable_country = {
+			limit = {
+                NAND = {
+                    has_ethic = ethic_materialist
+                    has_ethic = ethic_fanatic_materialist
+                }
+                any_owned_planet = {
+                    has_modifier = modifier_fp_university_world
+                }
+			}
+			country_event = { id = focused_planets_materialist.1 }
+        }
+        
+        every_playable_country = {
+			limit = {
+                NAND = {
+                    has_ethic = ethic_spiritualist
+                    has_ethic = ethic_fanatic_spiritualist
+                }
+                any_owned_planet = {
+                    has_modifier = modifier_fp_pilgrimage_world
+                }
+			}
+			country_event = { id = focused_planets_spiritualist.1 }
+        }
+        
+        every_playable_country = {
+			limit = {
+                NAND = {
+                    has_ethic = ethic_egalitarian
+                    has_ethic = ethic_fanatic_egalitarian
+                }
+                any_owned_planet = {
+                    has_modifier = modifier_fp_market_world
+                }
+			}
+			country_event = { id = focused_planets_egalitarian.1 }
+        }
+        
+        every_playable_country = {
+			limit = {
+                NAND = {
+                    has_ethic = ethic_authoritarian
+                    has_ethic = ethic_fanatic_authoritarian
+                }
+                any_owned_planet = {
+                    has_modifier = modifier_fp_palace_world
+                }
+			}
+			country_event = { id = focused_planets_authoritarian.1 }
+        }
+        
+        every_playable_country = {
+			limit = {
+                NAND = {
+                    has_ethic = ethic_xenophile
+                    has_ethic = ethic_fanatic_xenophile
+                }
+                any_owned_planet = {
+                    has_modifier = modifier_fp_embassy_world
+                }
+			}
+			country_event = { id = focused_planets_xenophile.1 }
+        }
+        
+        every_playable_country = {
+			limit = {
+                NAND = {
+                    has_ethic = ethic_xenophobe
+                    has_ethic = ethic_fanatic_xenophobe
+                }
+                any_owned_planet = {
+                    has_modifier = modifier_fp_indoctrination_world
+                }
+			}
+			country_event = { id = focused_planets_xenophobe.1 }
+        }
+        
+        every_playable_country = {
+			limit = {
+                NAND = {
+                    has_ethic = ethic_militarist
+                    has_ethic = ethic_fanatic_militarist
+                }
+                any_owned_planet = {
+                    has_modifier = modifier_fp_military_industrial_world
+                }
+			}
+			country_event = { id = focused_planets_militarist.1 }
+        }
+        
+        every_playable_country = {
+			limit = {
+                NAND = {
+                    has_ethic = ethic_pacifist
+                    has_ethic = ethic_fanatic_pacifist
+                }
+                any_owned_planet = {
+                    has_modifier = modifier_fp_fertility_world
+                }
+			}
+			country_event = { id = focused_planets_pacifist.1 }
+		}
+	}
+}

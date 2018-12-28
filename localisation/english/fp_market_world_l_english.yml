@@ -1,14 +1,18 @@
 ﻿l_english:
  col_fp_market_world:0 "Market World"
- col_fp_market_world_desc:0 "Billions of credits change hands daily in the countless markets covering this planet."
+ col_fp_market_world_desc:0 "Billions of credits change hands daily in the countless exchanges integrated into all aspects of this planet's society. Greed breeds luxurious lifestyles."
 
- decision_fp_market_world:0 "Establish Market World"
+ decision_fp_market_world:0 "Establish $modifier_fp_market_world$"
  decision_fp_market_world_desc:0 "$col_fp_market_world_desc$"
 
- decision_fp_abolish_market_world:0 "Remove Market World"
+ decision_fp_abolish_market_world:0 "Remove $modifier_fp_market_world$"
  decision_fp_abolish_market_world_desc:0 "The once-bustling marketplaces are now deathly silent."
 
- modifier_fp_market_world:0 "Market World"
+ modifier_fp_market_world:0 "Planetary Exchange"
  modifier_fp_market_world_desc:0 "$col_fp_market_world_desc$"
 
- fp_market_world_trade_building:0 "Planet must have at least two trade buildings or one advanced trade building"
+ fp_market_world_trade_building:0 "$TRIGGER_FAIL$ Planet must have at least two trade buildings or one advanced trade building"
+
+ focused_planets_egalitarian.1.name:0 "$modifier_fp_market_world$ Lost!"
+ focused_planets_egalitarian.1.desc:0 "Alas, our once grand $modifier_fp_market_world$ is now a shell of its former glory."
+ focused_planets_egalitarian.1.a:0 "All things come to an end"

@@ -1,12 +1,12 @@
 ﻿l_english:
  col_fp_fertility_world:0 "Fertility World"
- col_fp_fertility_world_desc:0 "Parents from all corners of the nation flock to this planet for its efficient healthcare systems dedicated to childbearing."
+ col_fp_fertility_world_desc:0 "Parents from all corners of the nation flock to this planet for its efficient healthcare systems dedicated to childbearing. As it turns out, kids are expensive!"
 
- decision_fp_fertility_world:0 "Establish Fertility World"
+ decision_fp_fertility_world:0 "Establish $modifier_fp_fertility_world$"
  decision_fp_fertility_world_desc:0 "$col_fp_fertility_world_desc$"
 
- decision_fp_abolish_fertility_world:0 "Remove Fertility World"
+ decision_fp_abolish_fertility_world:0 "Remove $modifier_fp_fertility_world$"
  decision_fp_abolish_fertility_world_desc:0 "The nurseries are empty."
 
- modifier_fp_fertility_world:0 "Fertility World"
+ modifier_fp_fertility_world:0 "Fertility Program"
  modifier_fp_fertility_world_desc:0 "$col_fp_fertility_world_desc$"
