@@ -11,6 +11,12 @@ The goal of this mod is to allow for more focused and specialized planets. Each 
 1. **Xenophobes** get the **Indoctrination World** that provides **Culture Worker** jobs, increases **Unity** production, and **Governing Ethics Attraction**
 1. **Xenophiles** get the **Embassy World** that provides **Clerk Jobs**, **Xenophile Ethics**, **Planet Habitability**, and **Immigration Pull**
 
+## Compatibility
+
+This mod adds decisions, events, and static modifiers. It should be compatible with almost all other mods that are not complete resource and/or ethics reworks.
+
+## Screenshots
+
 ![Decision](/img/decision.jpg)
 
 ![Embassy World](/img/embassy_world.jpg)
@@ -24,3 +30,4 @@ The goal of this mod is to allow for more focused and specialized planets. Each 
 
 ![University World](/img/university_world.jpg)
 ![Pilgrimage World](/img/pilgrimage_world.jpg)
+
