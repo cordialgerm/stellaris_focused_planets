@@ -1,6 +1,6 @@
 ﻿l_english:
  col_fp_pilgrimage_world:0 "Pilgrimage World"
- col_fp_pilgrimage_world_desc:0 "Billions of faithful pilgrims flock to this holy site every year. Many of the less fortunate are unable to afford the return trip."
+ col_fp_pilgrimage_world_desc:0 "Billions of faithful pilgrims flock to this holy site every year to receive the blessings of the High Priests, who ensure that the proper doctrines are enforced."
 
  decision_fp_pilgrimage_world:0 "Establish $modifier_fp_pilgrimage_world$"
  decision_fp_pilgrimage_world_desc:0 "$col_fp_pilgrimage_world_desc$"

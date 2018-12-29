@@ -33,3 +33,45 @@ country_event = {
 		}			
 	}
 }
+
+# Adds Materialist World modifier
+planet_event = {
+	id = focused_planets_materialist.2
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		trigger = {
+			owner = {
+				has_ethic = ethic_fanatic_materialist
+			}
+		}
+
+		add_modifier = {
+			modifier = modifier_fp_university_world
+			days = -1
+		}
+		add_modifier = {
+			modifier = modifier_fp_focused_planet
+			days = -1
+		} 
+	}
+
+	option = {
+		name = OK
+		trigger = {
+			owner = {
+				has_ethic = ethic_materialist
+			}
+		}
+
+		add_modifier = {
+			modifier = modifier_fp_university_world
+			days = -1
+		}
+		add_modifier = {
+			modifier = modifier_fp_focused_planet_not_fanatic
+			days = -1
+		} 
+	}
+}

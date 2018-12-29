@@ -1,6 +1,6 @@
 namespace = focused_planets_egalitarian
 
-# Owns Materialist World but not Materialist
+# Owns Egalitarian World but not Egalitarian
 country_event = {
 	id = focused_planets_egalitarian.1
 	title = "focused_planets_egalitarian.1.name"
@@ -31,5 +31,47 @@ country_event = {
 			remove_modifier = modifier_fp_focused_planet
 			remove_modifier = modifier_fp_focused_planet_not_fanatic
 		}			
+	}
+}
+
+# Adds Egalitarian World modifier
+planet_event = {
+	id = focused_planets_egalitarian.2
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		trigger = {
+			owner = {
+				has_ethic = ethic_fanatic_egalitarian
+			}
+		}
+
+		add_modifier = {
+			modifier = modifier_fp_market_world
+			days = -1
+		}
+		add_modifier = {
+			modifier = modifier_fp_focused_planet
+			days = -1
+		} 
+	}
+
+	option = {
+		name = OK
+		trigger = {
+			owner = {
+				has_ethic = ethic_egalitarian
+			}
+		}
+
+		add_modifier = {
+			modifier = modifier_fp_market_world
+			days = -1
+		}
+		add_modifier = {
+			modifier = modifier_fp_focused_planet_not_fanatic
+			days = -1
+		} 
 	}
 }

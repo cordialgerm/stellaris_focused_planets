@@ -12,7 +12,7 @@
  modifier_fp_indoctrination_world_desc:0 "$col_fp_indoctrination_world_desc$"
 
  fp_indoctrination_world_no_xenos:0 "$TRIGGER_FAIL$ Planet may not be despoiled by xeno pops"
- fp_indoctrination_world_unity_building:0 ""$TRIGGER_FAIL$ Planet must have at least one unity building"
+ fp_indoctrination_world_unity_building:0 "$TRIGGER_FAIL$ Planet must have at least one unity building"
 
  focused_planets_xenophobe.1.name:0 "$modifier_fp_indoctrination_world$ Lost!"
  focused_planets_xenophobe.1.desc:0 "Alas, our once grand $modifier_fp_indoctrination_world$ are now a shell of their former glory."

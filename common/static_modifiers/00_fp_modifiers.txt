@@ -1,6 +1,6 @@
-@worker_job_per_pop = 0.125          # 1 in 8
-@specialist_job_per_pop = 0.1        # 1 in 10
-@ruler_job_per_pop = 0.0833333333333 # 1 in 12
+@worker_job_per_pop = 0.1            # 1 in 10
+@specialist_job_per_pop = 0.08333333 # 1 in 12
+@ruler_job_per_pop = 0.0666666666666 # 1 in 15
 
 @ethics_attraction = 0.25
 
@@ -11,14 +11,14 @@ modifier_fp_focused_planet = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_fp_focused_planet.dds"
     icon_frame = 3
     
-    planet_pops_consumer_goods_upkeep_mult = 0.05
+    planet_pops_consumer_goods_upkeep_mult = 0.10
 }
 
 modifier_fp_focused_planet_not_fanatic = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_fp_focused_planet.dds"
     icon_frame = 3
     
-    planet_pops_consumer_goods_upkeep_mult = 0.10
+    planet_pops_consumer_goods_upkeep_mult = 0.15
 }
 
 
@@ -27,6 +27,7 @@ modifier_fp_indoctrination_world = {
 	icon_frame = 1
     
     job_culture_worker_per_pop = @specialist_job_per_pop
+    job_soldier_add = 2
     pop_government_ethic_attraction = @ethics_attraction
     planet_jobs_unity_produces_mult = 0.25
 
@@ -41,6 +42,7 @@ modifier_fp_embassy_world = {
 	icon_frame = 1
     
     job_clerk_per_pop = @worker_job_per_pop
+    job_administrator_add = 1
     pop_ethic_xenophile_attraction_mult = @ethics_attraction
     pop_environment_tolerance = 0.25
     planet_immigration_pull_mult = 0.50
@@ -53,7 +55,8 @@ modifier_fp_market_world = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_fp_market_world.dds"
     icon_frame = 1
     
-    job_merchant_per_pop = @ruler_job_per_pop
+    job_clerk_per_pop = @worker_job_per_pop
+    job_merchant_add = 1
     pop_ethic_egalitarian_attraction_mult = @ethics_attraction
     trade_value_mult = 0.25
 
@@ -67,10 +70,10 @@ modifier_fp_palace_world = {
     
     job_noble_per_pop = @ruler_job_per_pop
     pop_cat_ruler_political_power = 6.0
-    pop_cat_ruler_happiness = 0.2
+    pop_cat_ruler_happiness = 0.1
 
     pop_cat_worker_happiness = -0.1
-    pop_cat_slave_happiness = -0.2
+    pop_cat_slave_happiness = -0.1
 }
 
 
@@ -78,7 +81,8 @@ modifier_fp_pilgrimage_world = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_fp_pilgrimage_world.dds"
     icon_frame = 1
     
-    job_high_priest_per_pop = @ruler_job_per_pop
+    job_priest_per_pop = @specialist_job_per_pop
+    job_high_priest_add = 1
     pop_ethic_spiritualist_attraction_mult = @ethics_attraction
     pop_cat_worker_happiness = 0.2
     pop_cat_slave_happiness = 0.2
@@ -95,12 +99,14 @@ modifier_fp_university_world = {
     icon_frame = 1
     
     job_researcher_per_pop = @specialist_job_per_pop
+    job_head_researcher_add = 1
     pop_cat_specialist_happiness = 0.1
     planet_jobs_physics_research_produces_mult = 0.1
     planet_jobs_society_research_produces_mult = 0.1
     planet_jobs_engineering_research_produces_mult = 0.1
 
     pop_government_ethic_attraction = -0.25
+    planet_stability_add = -5
 }
 
 
@@ -109,6 +115,7 @@ modifier_fp_military_industrial_world = {
     icon_frame = 1
     
     job_soldier_per_pop = @worker_job_per_pop
+    job_foundry_add = 2
     pop_ethic_militarist_attraction_mult = @ethics_attraction
     planet_jobs_alloys_produces_mult = 0.1
 
@@ -120,7 +127,8 @@ modifier_fp_fertility_world = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_fp_fertility_world.dds"
     icon_frame = 1
     
-    job_healthcare_per_pop = @ruler_job_per_pop
+    job_entertainer_per_pop = @worker_job_per_pop
+    job_healthcare_add = 4
     pop_ethic_pacifist_attraction_mult = @ethics_attraction
     pop_happiness = 0.1
 

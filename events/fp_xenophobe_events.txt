@@ -33,3 +33,45 @@ country_event = {
 		}			
 	}
 }
+
+# Adds Xenophobe World modifier
+planet_event = {
+	id = focused_planets_xenophobe.2
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		trigger = {
+			owner = {
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+
+		add_modifier = {
+			modifier = modifier_fp_indoctrination_world
+			days = -1
+		}
+		add_modifier = {
+			modifier = modifier_fp_focused_planet
+			days = -1
+		} 
+	}
+
+	option = {
+		name = OK
+		trigger = {
+			owner = {
+				has_ethic = ethic_xenophobe
+			}
+		}
+
+		add_modifier = {
+			modifier = modifier_fp_indoctrination_world
+			days = -1
+		}
+		add_modifier = {
+			modifier = modifier_fp_focused_planet_not_fanatic
+			days = -1
+		} 
+	}
+}

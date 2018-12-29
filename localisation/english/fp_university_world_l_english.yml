@@ -1,6 +1,6 @@
 ﻿l_english:
  col_fp_university_world:0 "Academy World"
- col_fp_university_world_desc:0 "The best and the brightest aspire to enroll in the $modifier_fp_university_world$. Graduates are free-thinking, innovative, and forge their own path in the galaxy."
+ col_fp_university_world_desc:0 "The best and the brightest aspire to enroll in the $modifier_fp_university_world$. Graduates are free-thinking, innovative, and forge their own path in the galaxy. Some even organize protests."
 
  decision_fp_university_world:0 "Establish $modifier_fp_university_world$"
  decision_fp_university_world_desc:0 "$col_fp_university_world_desc$"
