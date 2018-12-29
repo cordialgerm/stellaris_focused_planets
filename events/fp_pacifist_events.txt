@@ -15,7 +15,7 @@ country_event = {
 			has_modifier = modifier_fp_fertility_world
 		}
 
-		NAND = {
+		NOR = {
 			has_ethic = ethic_pacifist
 			has_ethic = ethic_fanatic_pacifist
 		}
