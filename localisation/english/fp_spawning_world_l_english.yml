@@ -1,0 +1,10 @@
+﻿l_english:
+ 
+ decision_fp_spawning_world:0 "Establish $modifier_fp_spawning_world$"
+ decision_fp_spawning_world_desc:0 "$modifier_fp_spawning_world_desc$"
+
+ decision_fp_abolish_spawning_world:0 "Remove $modifier_fp_spawning_world$"
+ decision_fp_abolish_spawning_world_desc:0 "The spawning drones have moved on."
+
+ modifier_fp_spawning_world:0 "Vast Hatcheries"
+ modifier_fp_spawning_world_desc:0 "Vast spawning pools and hatcheries dedicated to feeding and raising the next brood cover this planet."

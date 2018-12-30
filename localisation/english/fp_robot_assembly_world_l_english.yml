@@ -1,0 +1,12 @@
+﻿l_english:
+ 
+ decision_fp_robot_assembly_world:0 "Establish $modifier_fp_robot_assembly_world$"
+ decision_fp_robot_assembly_world_desc:0 "$modifier_fp_robot_assembly_world_desc$"
+
+ decision_fp_abolish_robot_assembly_world:0 "Remove $modifier_fp_robot_assembly_world$"
+ decision_fp_abolish_robot_assembly_world_desc:0 "The assembly plants lie deserted."
+
+ modifier_fp_robot_assembly_world:0 "Mega-Assembly Facilities"
+ modifier_fp_robot_assembly_world_desc:0 "Vast manufacturing facilities tap into the planetary energy grid to continously produce the latest units."
+
+ mod_planet_pops_robotics_energy_upkeep_mult:0 "Robot Pop Energy Upkeep"
