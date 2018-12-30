@@ -1,0 +1,12 @@
+﻿l_english:
+ 
+ decision_fp_bio_trophy_paradise_world:0 "Establish $modifier_fp_bio_trophy_paradise_world$"
+ decision_fp_bio_trophy_paradise_world_desc:0 "$modifier_fp_bio_trophy_paradise_world_desc$"
+
+ decision_fp_abolish_bio_trophy_paradise_world:0 "Remove $modifier_fp_bio_trophy_paradise_world$"
+ decision_fp_abolish_bio_trophy_paradise_world_desc:0 "The organic paradises lie deserted."
+
+ modifier_fp_bio_trophy_paradise_world:0 "Organic Paradise"
+ modifier_fp_bio_trophy_paradise_world_desc:0 "This world has been specifically engineered down to the finest details to be a paradise for all organics."
+
+ mod_planet_pops_organics_upkeep_mult:0 "Organic Pop Upkeep"

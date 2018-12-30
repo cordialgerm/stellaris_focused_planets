@@ -1,6 +1,8 @@
 @worker_job_per_pop = 0.1            # 1 in 10
 @specialist_job_per_pop = 0.08333333 # 1 in 12
 @ruler_job_per_pop = 0.0666666666666 # 1 in 15
+@bio_trophy_per_pop = 0.2            # 1 in  5
+@spawning_job_per_pop = 0.04         # 1 in 25
 
 @ethics_attraction = 0.25
 
@@ -145,4 +147,38 @@ modifier_fp_beaurocratic_world = {
 
     pop_housing_usage_mult = 0.1
     pop_amenities_usage_mult = 0.1
+}
+
+
+modifier_fp_robot_assembly_world = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_fp_robot_assembly_world.dds"
+    icon_frame = 1
+
+    job_replicator_per_pop = @specialist_job_per_pop
+    job_coordinator_add = 1
+
+    planet_pops_robotics_energy_upkeep_mult = 1
+}
+
+
+modifier_fp_spawning_world = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_fp_spawning_world.dds"
+    icon_frame = 1
+
+    job_spawning_drone_per_pop = @spawning_job_per_pop
+    job_synapse_drone_add = 1
+
+    planet_pops_organics_food_upkeep_mult = 1
+}
+
+
+modifier_fp_bio_trophy_paradise_world = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_fp_bio_trophy_paradise_world.dds"
+    icon_frame = 1
+
+    job_bio_trophy_per_pop = @bio_trophy_per_pop
+    job_coordinator_add = 1
+    pop_cat_bio_trophy_happiness = 0.1
+
+    planet_pops_organics_upkeep_mult = 0.5
 }

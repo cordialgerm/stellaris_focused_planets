@@ -4,10 +4,16 @@
 
 @influence_cost = 150
 @influence_abolish_cost = 250
+
 @minerals_cost = 5000
-@energy_cost = 0
 @consumer_goods_cost = 1000
+
+@food_cost_hive = 5000
+
+@energy_cost_robot = 5000
+
 @min_pops = 19
+@min_pops_gestalt = 24
 
 
 
@@ -21,7 +27,6 @@ decision_fp_indoctrination_world = {
 		cost = {
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 		cost = {
@@ -34,7 +39,6 @@ decision_fp_indoctrination_world = {
 			}
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 	}
@@ -169,7 +173,6 @@ decision_fp_embassy_world = {
 		cost = {
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 		cost = {
@@ -182,7 +185,6 @@ decision_fp_embassy_world = {
 			}
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 	}
@@ -311,7 +313,6 @@ decision_fp_market_world = {
 		cost = {
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 		cost = {
@@ -324,7 +325,6 @@ decision_fp_market_world = {
 			}
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 	}
@@ -431,7 +431,6 @@ decision_fp_palace_world = {
 		cost = {
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 		cost = {
@@ -444,7 +443,6 @@ decision_fp_palace_world = {
 			}
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 	}
@@ -548,7 +546,6 @@ decision_fp_pilgrimage_world = {
 		cost = {
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 		cost = {
@@ -561,7 +558,6 @@ decision_fp_pilgrimage_world = {
 			}
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 	}
@@ -668,7 +664,6 @@ decision_fp_university_world = {
 		cost = {
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 		cost = {
@@ -681,7 +676,6 @@ decision_fp_university_world = {
 			}
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 	}
@@ -787,7 +781,6 @@ decision_fp_military_industrial_world = {
 		cost = {
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 		cost = {
@@ -800,7 +793,6 @@ decision_fp_military_industrial_world = {
 			}
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 	}
@@ -914,7 +906,6 @@ decision_fp_fertility_world = {
 		cost = {
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 		cost = {
@@ -927,7 +918,6 @@ decision_fp_fertility_world = {
 			}
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 	}
@@ -1038,7 +1028,6 @@ decision_fp_beaurocratic_world = {
 		cost = {
 			influence = @influence_cost
 			minerals = @minerals_cost
-			energy = @energy_cost
 			consumer_goods = @consumer_goods_cost
 		}
 	}
@@ -1061,7 +1050,7 @@ decision_fp_beaurocratic_world = {
 
 	allow = {
 		
-		num_pops > 29
+		num_pops > @min_pops
 	}
 	
 	effect = {
@@ -1099,6 +1088,218 @@ decision_fp_abolish_beaurocratic_world = {
 	effect = {
 		remove_modifier = modifier_fp_beaurocratic_world
 		remove_modifier = modifier_fp_focused_planet
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Spawning World
+decision_fp_spawning_world = {
+	
+	owned_planets_only = yes
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_cost
+			minerals = @minerals_cost
+			food = @food_cost_hive
+		}
+	}
+	
+	potential = {
+		
+		NOT = { 
+			owner = { 
+				any_owned_planet = { has_modifier = modifier_fp_spawning_world }
+			} 
+		}
+
+		owner = { is_hive_empire = yes }
+	}
+
+	allow = {
+		num_pops > @min_pops_gestalt
+		has_building = building_spawning_pool
+	}
+	
+	effect = {
+		add_modifier = {
+			modifier = modifier_fp_spawning_world
+			days = -1
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_fp_abolish_spawning_world = {
+	
+	owned_planets_only = yes
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_abolish_cost
+		}
+	}
+	
+	potential = {
+		has_modifier = modifier_fp_spawning_world
+	}
+	
+	effect = {
+		remove_modifier = modifier_fp_spawning_world
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Robot Assembly World
+decision_fp_robot_assembly_world = {
+	
+	owned_planets_only = yes
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost_robot
+		}
+	}
+	
+	potential = {
+		
+		NOT = { 
+			owner = { 
+				any_owned_planet = { has_modifier = modifier_fp_robot_assembly_world }
+			} 
+		}
+
+		owner = { 
+			is_machine_empire = yes
+			NOT = {
+				has_civic = civic_machine_servitor
+			}
+		}
+	}
+
+	allow = {
+		num_pops > @min_pops_gestalt
+		has_building = building_machine_assembly_plant
+	}
+	
+	effect = {
+		add_modifier = {
+			modifier = modifier_fp_robot_assembly_world
+			days = -1
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_fp_abolish_robot_assembly_world = {
+	
+	owned_planets_only = yes
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_abolish_cost
+		}
+	}
+	
+	potential = {
+		has_modifier = modifier_fp_robot_assembly_world
+	}
+	
+	effect = {
+		remove_modifier = modifier_fp_robot_assembly_world
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+
+# Organic Paradise World
+decision_fp_bio_trophy_paradise_world = {
+	
+	owned_planets_only = yes
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_cost
+			minerals = @minerals_cost
+			energy = @energy_cost_robot
+		}
+	}
+	
+	potential = {
+		
+		NOT = { 
+			owner = { 
+				any_owned_planet = { has_modifier = modifier_fp_bio_trophy_paradise_world }
+			} 
+		}
+
+		owner = { 
+			is_machine_empire = yes
+			has_civic = civic_machine_servitor
+		}
+	}
+
+	allow = {
+		num_pops > @min_pops_gestalt
+	}
+	
+	effect = {
+		add_modifier = {
+			modifier = modifier_fp_bio_trophy_paradise_world
+			days = -1
+		}
+		hidden_effect = { validate_planet_buildings_and_districts = yes }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_fp_abolish_bio_trophy_paradise_world = {
+	
+	owned_planets_only = yes
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = @influence_abolish_cost
+		}
+	}
+	
+	potential = {
+		has_modifier = modifier_fp_bio_trophy_paradise_world
+	}
+	
+	effect = {
+		remove_modifier = modifier_fp_bio_trophy_paradise_world
 		hidden_effect = { validate_planet_buildings_and_districts = yes }
 	}
 	
