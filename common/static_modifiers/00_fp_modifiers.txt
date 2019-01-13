@@ -157,7 +157,7 @@ modifier_fp_robot_assembly_world = {
     job_replicator_per_pop = @specialist_job_per_pop
     job_coordinator_add = 1
 
-    planet_pops_robotics_energy_upkeep_mult = 1
+    planet_pops_robotics_energy_upkeep_mult = 0.33
 }
 
 
@@ -168,7 +168,7 @@ modifier_fp_spawning_world = {
     job_spawning_drone_per_pop = @spawning_job_per_pop
     job_synapse_drone_add = 1
 
-    planet_pops_organics_food_upkeep_mult = 1
+    planet_pops_organics_food_upkeep_mult = 0.33
 }
 
 
